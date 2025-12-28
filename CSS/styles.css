@@ -142,12 +142,12 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
 }
 
 .empty-space {
     height: calc(var(--vh, 1vh) * 100);
-    transition: height 2s;
+    transition: height 2s ease-in-out .5s;
 }
 
 .info-card,
@@ -254,13 +254,15 @@ body.no-scroll {
         linear-gradient(110deg,#fdfdfd,#bcbcbc,#fff) border-box;
 }
 
-.elegant-form input[type="button"] {
+.elegant-form button[type="submit"] {
     padding: 12px 26px;
     border-radius: 12px;
     color: #e0e0e0;
     background: linear-gradient(135deg,#0b1f33,#1e5b8f,#081828);
     border: none;
     cursor: pointer;
+    font-family: "Aston-Script"; /* Mantener misma fuente que los inputs */
+    font-size: 1.2rem; /* Ajustable según tu diseño */
 }
 
 /* === SEAL === */

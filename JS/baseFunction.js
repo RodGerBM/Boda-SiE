@@ -19,7 +19,8 @@ setVH();
 window.addEventListener("resize", setVH);
 
 function openEnvelope() {
-    emptySpace.style.height = "calc(var(--vh, 1vh) * 100)";
+    const vh = window.innerHeight * 0.01; // 1vh real en px
+    emptySpace.style.height = `${vh * 85}px`; // 85% de la altura de la pantalla
     hand.style.opacity = "100%";
     envelopeFront.style.top = "110%";
     envelopeBack.style.top = "110%";
@@ -72,26 +73,3 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
-function sendConfirmation() {
-    const nombre = document.getElementById("nombreInput").value;
-    if(!nombre) {
-        alert("Por favor escribe tu nombre");
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbyRmKPsdt7IWyGYIArH35L9A16F4hGNns7xhJiG3LpB6GzHziJNnPlkLhMONXKAVgMj/exec", {
-        method: "POST",
-        body: new URLSearchParams({ nombre })
-    })
-    .then(res => res.text())
-    .then(res => {
-        if(res === "OK") {
-            alert("¡Confirmación enviada! Gracias 😊");
-            document.getElementById("nombreInput").value = "";
-        } else {
-            alert("Ocurrió un error, intenta de nuevo.");
-        }
-    })
-    .catch(err => alert("Error: " + err));
-}
