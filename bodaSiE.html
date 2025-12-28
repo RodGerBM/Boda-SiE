@@ -6,8 +6,13 @@
     <title>Invitación de Boda</title>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
+
 <body class="no-scroll">
+
     <div class="background"></div>
+    <div class="hand scroll">
+        <img src="Assets/Hand.png" alt="">
+    </div>
 
     <div class="envelope-back">
         <img src="Assets/Letter-05.png" class="envelope opened" alt="">
@@ -16,26 +21,151 @@
 
     <div class="cards-container">
         <div class="empty-space"></div>
+
+        <div class="photo-card">
+            <div class="photo-space">
+                <img src="Assets/Foto1.jpg" alt="">
+            </div>
+            <div class="photo-text">
+                <span>Nosotros...</span>
+            </div>
+        </div>
+
         <div class="info-card">
             <div class="card-text">
-                <span>Texto Informativo</span>
+                <!-- <span>Nosotros</span><br/> -->
+                <span class="principal">Stephy Salas</span><br/>
+                <span>&</span><br/>
+                <span class="principal">Esteban Bueno</span><br/>
+                <span>Con la bendición de Dios</span><br/>
+                <span class="principal">¡Nos Casamos!</span>
             </div>
         </div>
+
         <div class="photo-card">
-            <div class="photo-space"></div>
+            <div class="photo-space">
+                <img src="Assets/Foto2.jpg" alt="">
+            </div>
             <div class="photo-text">
-                <span>Información de Foto</span>
+                <span>La Fecha</span>
             </div>
         </div>
+
         <div class="info-card">
             <div class="card-text">
-                <span>Texto Informativo</span>
+                <!-- <span>La Fecha:</span><br/> -->
+                <span class="principal">Sábado </span>
+                <span class="principal number">21</span>
+                <span class="principal"> de Febrero </span>
+                <span class="principal number">2026</span>
             </div>
         </div>
+
+        <div class="info-card">
+            <div class="card-text" id="countdown">
+                <span>Faltan:</span><br/>
+                <span class="principal number">00</span><span class="principal">d </span>
+                <span class="principal number">00</span><span class="principal">h </span>
+                <span class="principal number">00</span><span class="principal">m </span>
+                <span class="principal number">00</span><span class="principal">s</span>
+            </div>
+        </div>
+
         <div class="photo-card">
-            <div class="photo-space"></div>
+            <div class="photo-space">
+                <img src="Assets/Foto3.jpg" alt="">
+            </div>
             <div class="photo-text">
-                <span>Información de Foto</span>
+                <span>El Itinerario</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <span class="principal">¡Es un placer invitarlos!</span><br/>
+                <span>Compartir estos momentos con ustedes los hace inolvidables</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <span class="principal number">7:00</span>
+                <span class="principal">p.m. - Boda Civil</span><br/>
+
+                <span class="principal number">8:15</span>
+                <span class="principal">p.m. - Entrada de los novios</span><br/>
+
+                <span class="principal number">8:30</span>
+                <span class="principal">p.m. - Cena</span><br/>
+
+                <span class="principal number">1:00</span>
+                <span class="principal">a.m. - Fin</span><br/>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-space">
+                <img src="Assets/Foto4.jpg" alt="">
+            </div>
+            <div class="photo-text">
+                <span>El Lugar</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <!-- <span>El lugar:</span><br/> -->
+                <span class="principal">Hacienda el mimbre</span><br/>
+                <span>Salón: El Arrullo</span>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-space">
+                <div class="hand">
+                    <img src="Assets/Hand.png" alt="">
+                </div>
+                <a href="https://maps.app.goo.gl/RfhmzLJmrR5VeqgM8" target="_blank">
+                    <img src="Assets/ElArrullo.png" alt="">
+                </a>
+            </div>
+            
+            <div class="photo-text">
+                <span>Hacienda el Mimbre</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <span class="principal">Confirma tu asistencia:</span><br/>
+                <form class="elegant-form">
+                    <input type="text" placeholder="Nombre" id="nombreInput">
+                    <input type="button" value="Confirmar" onclick="sendConfirmation()">
+                </form>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <div class="photo-space">
+                <img src="Assets/LluviaSobres.png" alt="">
+            </div>
+            <div class="photo-text">
+                <span>Lluvia de Sobres</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <span class="principal">
+                    La lluvia de sobres es la tradición de regalar dinero en efectivo el día del evento
+                </span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="card-text">
+                <span>Datos de transferencia:</span><br/>
+                <span class="principal number">4152 3144 3853 4367</span>
             </div>
         </div>
     </div>
@@ -47,12 +177,10 @@
 
         <div class="seal-hint vanish">
             <span>Presiona el sello para abrir</span>
-            <div class="arrow vanish"></div>
+            <div class="arrow"></div>
         </div>
     </div>
 
     <script src="JS/baseFunction.js"></script>
-
 </body>
-
 </html>
