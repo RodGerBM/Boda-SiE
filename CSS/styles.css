@@ -43,7 +43,7 @@ body.no-scroll {
     aspect-ratio: 1/1;
     left: 90%;
     top: 90%;
-    animation: showHand 1s ease-in-out infinite;;
+    animation: showHand 2s ease-in-out infinite;;
     z-index: 10;    
 }
 
