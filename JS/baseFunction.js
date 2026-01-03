@@ -45,31 +45,60 @@ window.addEventListener('scroll', () => {
 
 const targetDate = new Date("2026-02-21T19:00:00");
 
-const countdown = document.getElementById("countdown");
-const numbers = countdown.querySelectorAll(".number");
+// const countdown = document.getElementById("countdown");
+// const numbers = countdown.querySelectorAll(".number");
 
-function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
+// function updateCountdown() {
+//     const now = new Date();
+//     const diff = targetDate - now;
 
-    if (diff <= 0) {
-        numbers[0].textContent = "00";
-        numbers[1].textContent = "00";
-        numbers[2].textContent = "00";
-        numbers[3].textContent = "00";
-        return;
-    }
+//     if (diff <= 0) {
+//         numbers[0].textContent = "00";
+//         numbers[1].textContent = "00";
+//         numbers[2].textContent = "00";
+//         numbers[3].textContent = "00";
+//         return;
+//     }
 
-    const seconds = Math.floor((diff / 1000) % 60);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+//     const seconds = Math.floor((diff / 1000) % 60);
+//     const minutes = Math.floor((diff / 1000 / 60) % 60);
+//     const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
+//     const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    numbers[0].textContent = days.toString().padStart(2, "0");
-    numbers[1].textContent = hours.toString().padStart(2, "0");
-    numbers[2].textContent = minutes.toString().padStart(2, "0");
-    numbers[3].textContent = seconds.toString().padStart(2, "0");
+//     numbers[0].textContent = days.toString().padStart(2, "0");
+//     numbers[1].textContent = hours.toString().padStart(2, "0");
+//     numbers[2].textContent = minutes.toString().padStart(2, "0");
+//     numbers[3].textContent = seconds.toString().padStart(2, "0");
+// }
+
+// setInterval(updateCountdown, 1000);
+// updateCountdown();
+
+const music = document.getElementById("bgMusic");
+
+music.volume = 0;
+music.muted = false;
+
+function startMusicFade() {
+    music.currentTime = 6;
+    music.play().catch(() => {});
+
+    let volume = 0;
+    const targetVolume = 0.4;
+    const fadeDuration = 3000; // 3 segundos
+    const steps = 30;
+    const stepTime = fadeDuration / steps;
+    const step = targetVolume / steps;
+
+    const fade = setInterval(() => {
+        volume += step;
+        music.volume = Math.min(volume, targetVolume);
+        if (volume >= targetVolume) {
+            clearInterval(fade);
+        }
+    }, stepTime);
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// cuando se abre la invitación
+document.addEventListener("click", startMusicFade, { once: true });
+document.addEventListener("touchstart", startMusicFade, { once: true });
