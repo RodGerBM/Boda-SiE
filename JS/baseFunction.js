@@ -45,34 +45,34 @@ window.addEventListener('scroll', () => {
 
 const targetDate = new Date("2026-02-21T19:00:00");
 
-// const countdown = document.getElementById("countdown");
-// const numbers = countdown.querySelectorAll(".number");
+const countdown = document.getElementById("countdown");
+const numbers = countdown.querySelectorAll(".number");
 
-// function updateCountdown() {
-//     const now = new Date();
-//     const diff = targetDate - now;
+function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
 
-//     if (diff <= 0) {
-//         numbers[0].textContent = "00";
-//         numbers[1].textContent = "00";
-//         numbers[2].textContent = "00";
-//         numbers[3].textContent = "00";
-//         return;
-//     }
+    if (diff <= 0) {
+        numbers[0].textContent = "00";
+        numbers[1].textContent = "00";
+        numbers[2].textContent = "00";
+        numbers[3].textContent = "00";
+        return;
+    }
 
-//     const seconds = Math.floor((diff / 1000) % 60);
-//     const minutes = Math.floor((diff / 1000 / 60) % 60);
-//     const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
-//     const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const seconds = Math.floor((diff / 1000) % 60);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const hours   = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-//     numbers[0].textContent = days.toString().padStart(2, "0");
-//     numbers[1].textContent = hours.toString().padStart(2, "0");
-//     numbers[2].textContent = minutes.toString().padStart(2, "0");
-//     numbers[3].textContent = seconds.toString().padStart(2, "0");
-// }
+    numbers[0].textContent = days.toString().padStart(2, "0");
+    numbers[1].textContent = hours.toString().padStart(2, "0");
+    numbers[2].textContent = minutes.toString().padStart(2, "0");
+    numbers[3].textContent = seconds.toString().padStart(2, "0");
+}
 
-// setInterval(updateCountdown, 1000);
-// updateCountdown();
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 const music = document.getElementById("bgMusic");
 
